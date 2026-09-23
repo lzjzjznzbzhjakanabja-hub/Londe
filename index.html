@@ -18,7 +18,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden;overflow-y:auto;cursor:none;min-height:100vh}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden;cursor:none}
 ::selection{background:var(--accent);color:#000}
 
 /* ---------- Cursor ---------- */
@@ -37,7 +37,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hi
 @keyframes load{to{width:100%}}
 
 /* ---------- Nav ---------- */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;mix-blend-mode:difference}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;mix-blend-mode:difference}
 .logo{font-family:var(--serif);font-weight:800;font-size:1.5rem;letter-spacing:.4em;color:#fff;text-decoration:none}
 .nav-links{display:flex;gap:38px}
 .nav-links a{color:#fff;text-decoration:none;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;position:relative;padding:4px 0}
@@ -77,7 +77,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* ---------- Sections ---------- */
-section{padding:120px 48px;max-width:1500px;margin:0 auto;scroll-margin-top:90px}
+section{padding:120px 48px;max-width:1500px;margin:0 auto}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:70px;gap:24px;flex-wrap:wrap}
 .sec-title{font-family:var(--serif);font-weight:700;font-size:clamp(2.4rem,5.5vw,4.5rem);line-height:1.05}
 .sec-num{font-size:.72rem;letter-spacing:.3em;color:var(--muted)}
@@ -112,7 +112,7 @@ section{padding:120px 48px;max-width:1500px;margin:0 auto;scroll-margin-top:90px
 .g5{background:radial-gradient(circle at 80% 60%,#5a4c38,transparent 55%),linear-gradient(220deg,#38301f,#0f0d09)}
 
 /* ---------- Manifesto ---------- */
-.manifesto{text-align:center;padding:160px 48px;background:var(--bg2);scroll-margin-top:90px}
+.manifesto{text-align:center;padding:160px 48px;background:var(--bg2)}
 .manifesto p{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,3.6vw,3rem);line-height:1.35;max-width:1000px;margin:0 auto}
 .manifesto em{font-style:normal;color:var(--accent)}
 
@@ -140,7 +140,7 @@ section{padding:120px 48px;max-width:1500px;margin:0 auto;scroll-margin-top:90px
 @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr);gap:40px}}
 
 /* ---------- CTA / Newsletter ---------- */
-.cta{text-align:center;padding:150px 48px;scroll-margin-top:90px}
+.cta{text-align:center;padding:150px 48px}
 .cta h2{font-family:var(--serif);font-weight:800;font-size:clamp(2.6rem,6vw,5rem);line-height:1.05}
 .cta p{color:var(--muted);margin:24px auto 44px;max-width:440px;line-height:1.7}
 .news{display:flex;max-width:480px;margin:0 auto;border:1px solid #333}
@@ -160,42 +160,9 @@ footer{border-top:1px solid #1d1d1d;padding:70px 48px 36px;max-width:1500px;marg
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:70px;padding-top:28px;border-top:1px solid #1a1a1a;font-size:.68rem;letter-spacing:.2em;color:var(--muted);flex-wrap:wrap;gap:12px}
 @media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
-
-/* ---------- Shop / Cart ---------- */
-.card{cursor:pointer}
-.card .buy-btn{position:absolute;right:22px;bottom:20px;z-index:3;border:1px solid rgba(244,241,236,.65);background:rgba(10,10,10,.45);backdrop-filter:blur(8px);color:var(--ink);padding:10px 14px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:.3s;cursor:pointer}
-.card:hover .buy-btn{opacity:1;transform:none}
-.cart-btn{position:fixed;right:28px;bottom:28px;z-index:500;background:var(--ink);color:#000;border:0;padding:14px 18px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 30px #0008}
-.cart-count{font-weight:800;color:#9b783b}
-.modal,.cart-panel{position:fixed;inset:0;background:#000b;z-index:10001;display:none;align-items:center;justify-content:center;padding:20px}
-.modal.open,.cart-panel.open{display:flex}
-.modal-box,.cart-box{width:min(560px,100%);background:#111;border:1px solid #333;padding:30px;box-shadow:0 20px 80px #000}
-.modal-box h3,.cart-box h3{font-family:var(--serif);font-size:2rem;margin-bottom:8px}
-.modal-box p{color:var(--muted);line-height:1.6}
-.modal-actions{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}
-.action-btn{padding:13px 18px;border:1px solid #555;background:transparent;color:var(--ink);cursor:pointer;text-transform:uppercase;letter-spacing:.15em;font-size:.65rem}
-.action-btn.primary{background:var(--ink);color:#000;border-color:var(--ink)}
-.close-btn{float:right;background:none;border:0;color:var(--muted);font-size:1.4rem;cursor:pointer}
-.cart-item{display:flex;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px solid #292929}
-.cart-item small{color:var(--muted)}
-.cart-total{display:flex;justify-content:space-between;font-weight:700;margin-top:20px;font-size:1.1rem}
-.empty-cart{color:var(--muted);padding:25px 0}
-@media(max-width:600px){.cart-btn{right:15px;bottom:15px}.card .buy-btn{opacity:1;transform:none}}
-
-
-/* ---------- Navigation helpers ---------- */
-.scroll-progress{position:fixed;top:0;left:0;width:0;height:2px;background:var(--accent);z-index:2000;transition:width .05s linear}
-.top-btn{position:fixed;right:28px;bottom:84px;width:42px;height:42px;border:1px solid #444;background:#111;color:var(--ink);z-index:499;cursor:pointer;display:none;font-size:1rem}
-.top-btn.show{display:block}
-@media(max-width:600px){.top-btn{right:15px;bottom:78px}}
-
 </style>
 </head>
 <body>
-
-<div class="scroll-progress" id="scrollProgress"></div>
-<button class="top-btn" id="topBtn" aria-label="Back to top">↑</button>
-
 
 <div class="cursor"></div>
 <div class="cursor-ring"></div>
@@ -206,7 +173,7 @@ footer{border-top:1px solid #1d1d1d;padding:70px 48px 36px;max-width:1500px;marg
 </div>
 
 <nav>
-  <a href="#home" class="logo">LONDE</a>
+  <a href="#" class="logo">LONDE</a>
   <div class="nav-links" id="navLinks">
     <a href="#collections">Collection</a>
     <a href="#lookbook">Lookbook</a>
@@ -217,7 +184,7 @@ footer{border-top:1px solid #1d1d1d;padding:70px 48px 36px;max-width:1500px;marg
 </nav>
 
 <!-- HERO -->
-<header class="hero" id="home">
+<header class="hero">
   <div class="hero-bg"></div>
   <h1 class="hero-title reveal">LONDE</h1>
   <p class="hero-sub reveal">Fashion Without Compromise — Fall / Winter 2026</p>
@@ -243,11 +210,11 @@ footer{border-top:1px solid #1d1d1d;padding:70px 48px 36px;max-width:1500px;marg
     <p class="sec-desc reveal">Every piece is the result of hundreds of hours of master craftsmanship. We don't chase trends — we create what will stay with you forever.</p>
   </div>
   <div class="grid">
-    <div class="card c1 reveal" data-name="Oversized Coat" data-price="24900"><div class="img g1"></div><div class="veil"></div><div class="tag">New</div><div class="info"><h3>Oversized Coat</h3><p>24 900 ₽ · AW26</p></div><button class="buy-btn">Add to Cart</button></div>
-    <div class="card c2 reveal" data-name="Silk Shirt" data-price="11400"><div class="img g2"></div><div class="veil"></div><div class="info"><h3>Silk Shirt</h3><p>11 400 ₽ · AW26</p></div><button class="buy-btn">Add to Cart</button></div>
-    <div class="card c3 reveal" data-name="Leather Jacket" data-price="38900"><div class="img g3"></div><div class="veil"></div><div class="tag">Limited</div><div class="info"><h3>Leather Jacket</h3><p>38 900 ₽</p></div><button class="buy-btn">Add to Cart</button></div>
-    <div class="card c4 reveal" data-name="Wool Blazer" data-price="27600"><div class="img g4"></div><div class="veil"></div><div class="info"><h3>Wool Blazer</h3><p>27 600 ₽</p></div><button class="buy-btn">Add to Cart</button></div>
-    <div class="card c5 reveal" data-name="Essential Longsleeve" data-price="6800"><div class="img g5"></div><div class="veil"></div><div class="tag">Best Seller</div><div class="info"><h3>Essential Longsleeve</h3><p>6 800 ₽</p></div><button class="buy-btn">Add to Cart</button></div>
+    <div class="card c1 reveal"><div class="img g1"></div><div class="veil"></div><div class="tag">New</div><div class="info"><h3>Oversized Coat</h3><p>$290 · AW26</p></div></div>
+    <div class="card c2 reveal"><div class="img g2"></div><div class="veil"></div><div class="info"><h3>Silk Shirt</h3><p>$135 · AW26</p></div></div>
+    <div class="card c3 reveal"><div class="img g3"></div><div class="veil"></div><div class="tag">Limited</div><div class="info"><h3>Leather Jacket</h3><p>$450</p></div></div>
+    <div class="card c4 reveal"><div class="img g4"></div><div class="veil"></div><div class="info"><h3>Wool Blazer</h3><p>$320</p></div></div>
+    <div class="card c5 reveal"><div class="img g5"></div><div class="veil"></div><div class="tag">Best Seller</div><div class="info"><h3>Essential Longsleeve</h3><p>$80</p></div></div>
   </div>
 </section>
 
@@ -297,36 +264,6 @@ footer{border-top:1px solid #1d1d1d;padding:70px 48px 36px;max-width:1500px;marg
 </section>
 
 <!-- FOOTER -->
-
-<button class="cart-btn" id="cartBtn">Cart <span class="cart-count" id="cartCount">0</span></button>
-
-<div class="modal" id="productModal">
-  <div class="modal-box">
-    <button class="close-btn" data-close="productModal">✕</button>
-    <h3 id="modalName">Product</h3>
-    <p id="modalPrice"></p>
-    <p id="modalDesc">Add this piece to your LONDE collection.</p>
-    <div class="modal-actions">
-      <button class="action-btn primary" id="modalAdd">Add to Cart</button>
-      <button class="action-btn" data-close="productModal">Continue Shopping</button>
-    </div>
-  </div>
-</div>
-
-<div class="cart-panel" id="cartPanel">
-  <div class="cart-box">
-    <button class="close-btn" data-close="cartPanel">✕</button>
-    <h3>Your Cart</h3>
-    <div id="cartItems"></div>
-    <div class="cart-total"><span>Total</span><span id="cartTotal">0 ₽</span></div>
-    <div class="modal-actions">
-      <button class="action-btn primary" id="checkoutBtn">Order Now</button>
-      <button class="action-btn" id="clearCart">Clear Cart</button>
-    </div>
-    <p id="checkoutMsg" style="color:var(--accent);margin-top:14px;min-height:1.2em"></p>
-  </div>
-</div>
-
 <footer>
   <div class="foot-grid">
     <div>
@@ -366,30 +303,10 @@ document.querySelectorAll('a,button,.card,.look').forEach(el=>{
   el.addEventListener('mouseleave',()=>cur.classList.remove('grow'));
 });
 
-// Mobile menu + reliable navigation
+// Mobile menu
 const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
-
-burger.addEventListener('click',()=>{
-  navLinks.classList.toggle('open');
-  burger.textContent=navLinks.classList.contains('open')?'✕':'☰';
-});
-
-navLinks.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    const target=document.querySelector(a.getAttribute('href'));
-    if(target){
-      navLinks.classList.remove('open');
-      burger.textContent='☰';
-      target.scrollIntoView({behavior:'smooth',block:'start'});
-    }
-  });
-});
-
-document.querySelector('.logo').addEventListener('click',e=>{
-  e.preventDefault();
-  document.getElementById('home').scrollIntoView({behavior:'smooth',block:'start'});
-});
+burger.addEventListener('click',()=>{navLinks.classList.toggle('open');burger.textContent=navLinks.classList.contains('open')?'✕':'☰'});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');burger.textContent='☰'}));
 
 // Scroll reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.15});
@@ -418,74 +335,6 @@ looks.addEventListener('pointerdown',e=>{down=true;startX=e.pageX;scrollL=looks.
 looks.addEventListener('pointerleave',()=>down=false);
 looks.addEventListener('pointerup',()=>down=false);
 looks.addEventListener('pointermove',e=>{if(!down)return;looks.scrollLeft=scrollL-(e.pageX-startX)});
-
-// Product modal + cart
-const cart = JSON.parse(localStorage.getItem('londeCart') || '[]');
-const cartBtn = document.getElementById('cartBtn');
-const cartPanel = document.getElementById('cartPanel');
-const productModal = document.getElementById('productModal');
-const cartCount = document.getElementById('cartCount');
-const cartItems = document.getElementById('cartItems');
-const cartTotal = document.getElementById('cartTotal');
-let selectedProduct = null;
-
-function saveCart(){ localStorage.setItem('londeCart', JSON.stringify(cart)); renderCart(); }
-function renderCart(){
-  const count = cart.reduce((s,i)=>s+i.qty,0);
-  cartCount.textContent = count;
-  if(!cart.length){ cartItems.innerHTML='<div class="empty-cart">Your cart is empty.</div>'; cartTotal.textContent='0 ₽'; return; }
-  let total=0;
-  cartItems.innerHTML=cart.map((item,i)=>{
-    total += item.price*item.qty;
-    return `<div class="cart-item"><div><strong>${item.name}</strong><br><small>${item.price.toLocaleString('ru-RU')} ₽ × ${item.qty}</small></div>
-      <div><button class="action-btn" onclick="changeQty(${i},-1)">−</button> <button class="action-btn" onclick="changeQty(${i},1)">+</button> <button class="action-btn" onclick="removeItem(${i})">Remove</button></div></div>`;
-  }).join('');
-  cartTotal.textContent = total.toLocaleString('ru-RU')+' ₽';
-}
-function changeQty(i,d){ cart[i].qty += d; if(cart[i].qty<=0) cart.splice(i,1); saveCart(); }
-function removeItem(i){ cart.splice(i,1); saveCart(); }
-
-document.querySelectorAll('.card[data-name]').forEach(card=>{
-  const product={name:card.dataset.name,price:Number(card.dataset.price)};
-  card.querySelector('.buy-btn').addEventListener('click',e=>{e.stopPropagation(); addProduct(product);});
-  card.addEventListener('click',()=>{
-    selectedProduct=product;
-    document.getElementById('modalName').textContent=product.name;
-    document.getElementById('modalPrice').textContent=product.price.toLocaleString('ru-RU')+' ₽ · AW26';
-    productModal.classList.add('open');
-  });
-});
-function addProduct(product){
-  const found=cart.find(i=>i.name===product.name);
-  if(found) found.qty++; else cart.push({...product,qty:1});
-  saveCart();
-  productModal.classList.remove('open');
-}
-document.getElementById('modalAdd').addEventListener('click',()=>{if(selectedProduct)addProduct(selectedProduct);});
-cartBtn.addEventListener('click',()=>{renderCart();cartPanel.classList.add('open');});
-document.getElementById('clearCart').addEventListener('click',()=>{cart.length=0;saveCart();});
-document.getElementById('checkoutBtn').addEventListener('click',()=>{
-  document.getElementById('checkoutMsg').textContent = cart.length ? 'Order system is ready — payment will be connected soon.' : 'Add a product to your cart first.';
-});
-document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.close).classList.remove('open')));
-[productModal,cartPanel].forEach(el=>el.addEventListener('click',e=>{if(e.target===el)el.classList.remove('open')}));
-renderCart();
-
-
-// Scroll progress + back to top
-const scrollProgress=document.getElementById('scrollProgress');
-const topBtn=document.getElementById('topBtn');
-
-function updateScrollUI(){
-  const max=document.documentElement.scrollHeight-window.innerHeight;
-  const percent=max>0 ? (window.scrollY/max)*100 : 0;
-  scrollProgress.style.width=percent+'%';
-  topBtn.classList.toggle('show',window.scrollY>500);
-}
-window.addEventListener('scroll',updateScrollUI,{passive:true});
-topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-updateScrollUI();
-
 </script>
 </body>
 </html>
